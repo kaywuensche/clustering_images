@@ -54,13 +54,14 @@ Images will be saved to the mounted input directory, which can be changed in the
 ```
 The endpoint returns an overview of all downloaded images. For example when searching for 'germany':
 
-![all_input_images](https://user-images.githubusercontent.com/58667455/119461239-cc1d6580-bd3f-11eb-9653-752f60f76d05.png)
+![overview](https://user-images.githubusercontent.com/58667455/120225600-d19a1480-c245-11eb-92b4-9027b5b9b294.png)
 
 **/get_amount_of_clusters (POST)**
 
 This endpoint takes the image set from the mounted input directory and returns the result of the elbow method for choosing the best amount of clusters:
 
-![elbow](https://user-images.githubusercontent.com/58667455/119462733-5b774880-bd41-11eb-88d3-6c914cfc650d.png)
+![elbow](https://user-images.githubusercontent.com/58667455/120225961-87656300-c246-11eb-8b40-ef34328e4f44.png)
+
 
 Please place files in the mounted input directory. 
 ```
