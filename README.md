@@ -1,4 +1,4 @@
-# clustering_images
+# Clustering Images
 
 API for grouping images on similarity. 
 
