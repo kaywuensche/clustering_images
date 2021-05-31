@@ -71,7 +71,7 @@ Please place files in the mounted input directory.
         ├── *.png
 ```
 
-**/clustering_images (POST)**
+**/cluster_images (POST)**
 
 This endpoint takes the image set from the mounted input directory and groups them based on similarity.
 
