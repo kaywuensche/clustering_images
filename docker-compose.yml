@@ -1,0 +1,16 @@
+version: '3'
+services:
+    clustering_images:
+        restart: always
+        build:
+            dockerfile: ./docker/dockerfile
+            context: ./
+        volumes:
+            - ./exchange/:/exchange
+        networks:
+          - webproxy
+        ports:
+          - '5002:5002'
+networks:
+  webproxy:
+    driver: bridge

@@ -1,0 +1,11 @@
+fastapi==0.65.1
+uvicorn==0.13.4
+python-multipart==0.0.5
+pillow==8.2.0
+requests==2.25.1
+bs4==0.0.1
+numpy==1.19.5
+tensorflow==2.2.0
+keras==2.4.3
+scikit-learn==0.24.2
+yellowbrick==1.3
