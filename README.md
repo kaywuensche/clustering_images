@@ -60,8 +60,7 @@ The endpoint returns an overview of all downloaded images. For example when sear
 
 This endpoint takes the image set from the mounted input directory and returns the result of the elbow method for choosing the best amount of clusters:
 
-![elbow](https://user-images.githubusercontent.com/58667455/120225961-87656300-c246-11eb-8b40-ef34328e4f44.png)
-
+![elbow19](https://user-images.githubusercontent.com/58667455/120226592-cc3dc980-c247-11eb-8528-f6f47626ea91.png)
 
 Please place files in the mounted input directory. 
 ```
@@ -102,4 +101,5 @@ Please place files in the input directory. The output directory will be generate
 ```
 The endpoint returns an overview of the image clusters:
 
-![clusters_overview](https://user-images.githubusercontent.com/58667455/119463097-b3ae4a80-bd41-11eb-8df1-d341b20e50c4.png)
+![cluster19](https://user-images.githubusercontent.com/58667455/120226570-c0ea9e00-c247-11eb-8c07-56a245dda757.png)
+
