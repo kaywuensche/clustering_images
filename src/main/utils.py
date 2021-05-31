@@ -184,10 +184,11 @@ def clustering(path, amount_of_clusters, meth):
         if (meth == 'elbow'):
             buf = io.BytesIO()
             visualizer.show(outpath=buf, format='PNG')
+            plt.gcf().clear()
             return buf
         else:
             amount_of_clusters = visualizer.elbow_value_
-        plt.gcf().clear()
+            plt.gcf().clear()
     # clustering
     kmeans = KMeans(n_clusters=amount_of_clusters, random_state=22)
     kmeans.fit(x)
