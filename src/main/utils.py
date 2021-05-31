@@ -118,11 +118,8 @@ def remove_duplicate_images(img_dir):
 def extract_features(file, model):
     img = load_img(file, target_size=(224,224))
     img = np.array(img)
-    # reshape the data for the model reshape(num_of_samples, dim 1, dim 2, channels)
     reshaped_img = img.reshape(1,224,224,3)
-    # prepare image for model
     imgx = preprocess_input(reshaped_img)
-    # get the feature vector
     features = model.predict(imgx, use_multiprocessing=True)
     return features
 
@@ -148,15 +145,12 @@ def create_image_from_clusters(directory):
         return buf
 
 def clustering(path, amount_of_clusters, meth):
-    #load model
     model = VGG16()
     model = Model(inputs=model.inputs, outputs=model.layers[-2].output)
-    # load images
     os.chdir(path)
     with os.scandir(path) as files:
         images = [file.name for file in files if file.name.endswith('.png')]
     data = {}
-    # create feature vectors
     for image in images:
         feat = extract_features(image, model)
         data[image] = feat
@@ -164,7 +158,6 @@ def clustering(path, amount_of_clusters, meth):
     file_count = len(filenames)
     feat = np.array(list(data.values()))
     feat = feat.reshape(-1,4096)
-    # reduce the amount of dimensions in the feature vector
     if len(feat) > 100 and file_count > 100:
         components = 100
     else:
@@ -172,7 +165,6 @@ def clustering(path, amount_of_clusters, meth):
     pca = PCA(n_components=components, random_state=22)
     pca.fit(feat)
     x = pca.transform(feat)
-    # calculate best amount of clusters
     if amount_of_clusters is None or meth == 'elbow':
         if file_count > 50:
             rounds = 50
@@ -189,7 +181,6 @@ def clustering(path, amount_of_clusters, meth):
         else:
             amount_of_clusters = visualizer.elbow_value_
             plt.gcf().clear()
-    # clustering
     kmeans = KMeans(n_clusters=amount_of_clusters, random_state=22)
     kmeans.fit(x)
     groups = {}
